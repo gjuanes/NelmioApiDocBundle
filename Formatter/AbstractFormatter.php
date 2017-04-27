@@ -80,6 +80,10 @@ abstract class AbstractFormatter implements FormatterInterface
                 'untilVersion' => array_key_exists('untilVersion', $info) ? $info['untilVersion'] : null,
                 'actualType'   => array_key_exists('actualType', $info) ? $info['actualType'] : null,
                 'subType'      => array_key_exists('subType', $info) ? $info['subType'] : null,
+                // This is added to allow to show examples as a new column in swagger
+                // This was originally done on 16 September 2016.
+                // Exactly commit in parent repository 517037f80334e9c236cd87dd003943a31a79ac5b
+                'example'      => array_key_exists('example', $info) ? $info['example'] : null,
             );
 
             if (isset($info['children']) && (!$info['readonly'] || !$ignoreNestedReadOnly)) {
